@@ -26,4 +26,3 @@
 	<body>
 		<input id="btn" type="button" value="ダイアログ表示" />
 	</body>
-</html>
