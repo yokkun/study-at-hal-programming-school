@@ -12,9 +12,7 @@
 		//var ary = Array.prototype.slice.call(arguments);
 	</script>
 </head>
-
 <body>
 	現在時刻：<span id="result"></span>
 </body>
-
 </html>

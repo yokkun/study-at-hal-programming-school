@@ -10,12 +10,10 @@
 		});
 	</script>
 </head>
-
 <body>
 	<form>
 		<label for="time">時刻：</label>
 		<input id="time" name="time" type="text" size="10">
 	</form>
 </body>
-
 </html>
