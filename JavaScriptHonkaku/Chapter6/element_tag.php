@@ -11,7 +11,6 @@
 		});
 	</script>
 </head>
-
 <body>
 	<ul> 
 		<li><a href="http://www.wings.msn.to/" class ="my">サーバサイド技術の学び舎 - WINGS</a></li>
@@ -19,5 +18,4 @@
 		<li><a href="http://www.buildinsider.net/web/jqueryref">jQuery逆引きリファレンス</a></li>
 	</ul>
 </body>
-
 </html>
