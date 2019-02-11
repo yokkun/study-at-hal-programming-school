@@ -6,10 +6,10 @@
 		document.addEventListener('DOMContentLoaded', function(){
     		var list = document.getElementById('list');
     		var pic = document.getElementById('pic');
-    		var del = document.getElmentById('del');
+    		var del = document.getElementById('del');
 			
 			list.addEventListener('click', function(e){
-					var isbn = e.target.getAttribute('data-isbn');
+					var isbn = e.target.getAttribute('data-isbn');//data-属性は自由に作れるHTML属性
 
 					if(isbn){
 						var img = document.createElement('img');
@@ -17,20 +17,20 @@
 						img.alt = e.innerHTML;
 						img.height = 150;
 						img.width = 108;
-						if(pic.getElementByTagName('img').length > 0){
+						if(pic.getElementsByTagName('img').length > 0){
 							pic.replaceChild(img, pic.lastChild);
 						}
 						else
 						{
 							del.disabled = false;
-							pic.appendChild{img};
+							pic.appendChild(img);
 						}
 					}
 				}, false
 			);
 				del.addEventListener('click', function(){
-					pic.removeChild(pic, lastChild);
-					del.disabled = true
+					pic.removeChild(pic.lastChild);//lastChildまたはfirstChildが使える
+					del.disabled = true;//削除した後は削除ボタンを使えないようにする
 				},false );
 		}, false);
 	</script>
