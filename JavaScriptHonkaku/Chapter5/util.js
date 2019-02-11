@@ -1,4 +1,3 @@
-<script>
 //class_propをモジュール化した例
 export class Member{
 	//コンストラクタ
@@ -24,4 +23,3 @@ export class Member{
 		return this.lastName + this.firstName;
 	}
 }
-</script>
