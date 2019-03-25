@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',function(){
-	makeTimer();
+	
 		let result = document.getElementById('result');	
-		let start = document.getElmentById('start');
+		let start = document.getElementById('start');
 		let stop = document.getElementById('stop');
 		let timer; 
 		function makeTimer(){
@@ -15,4 +15,5 @@ document.addEventListener('DOMContentLoaded',function(){
 	start.addEventListener('click',makeTimer,false);
 	stop.addEventListener('click',function(){clearInterval(timer);
 	},false);
+	makeTimer();
 });
