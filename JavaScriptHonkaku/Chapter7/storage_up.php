@@ -1,17 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  
 <link rel="stylesheet" href="style.css" />
-<script type="text/javascript">
-	var storage = new MyStorage('JSSample');
-	storage.setItem('hoge','ほげ');
-	console.log(storage.getItem('hoge'));
-	storage.save();
-</script>
-<title>ストレージにデータを保存</title>
+-->
+<script type="text/javascript" src="storage_ev.js"></script>
+
+<title>ストレージの変更を監視</title>
 </head>
 <body>
 	<div id="main">
