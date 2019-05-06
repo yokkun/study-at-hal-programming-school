@@ -10,6 +10,14 @@ session_start();
 	<body>
 		<a href="../index.php">ホームへ戻る</a>
 		<h3>費目登録</h3>
+		<p style="color:blue;">
+		<?php 
+		if(isset($_SESSION['message'])){
+		    print ($_SESSION['message']);
+		    unset($_SESSION['message']);
+		}
+		?>
+		</p>
 		<ul style='color:red;'>
 		<?php 
 		if(isset($_SESSION['errors'])){

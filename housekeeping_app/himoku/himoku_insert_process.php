@@ -51,6 +51,8 @@ session_start();
         unset ($_SESSION['himoku_name']);
         unset ($_SESSION['kubun']);
         unset ($_SESSION['memo']);
+        
+        $_SESSION['message'] = "登録完了しました。";
     } catch (PDOException $e){
         die('エラーメッセージ：' . $e->getMessage());
     } 
