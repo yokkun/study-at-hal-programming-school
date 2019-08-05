@@ -33,8 +33,8 @@ session_start();
 		<form method="POST" action="himoku_insert_process.php">
 			<div class="container">
 				<label for="name">費目名：</label><br />
-				<input type="text" id="name" name="himoku_name" size="30" 
-				value="<?=$_SESSION['himoku_name']?>" />
+				<input type="text" id="name" name="name" size="30" 
+				value="<?=$_SESSION['name']?>" />
 			</div>
 			<div class="container">
 				<label>入出金区分</label><br />
@@ -48,10 +48,6 @@ session_start();
 				<?php    
 				}
 				?>
-				<!-- 
-				<label><input type="radio" name="kubun" value="1">入金</label>
-				<label><input type="radio" name="kubun" value="2">出金</label>
-				-->
 			</div>
 			<div class="container">
 				<label>備考</label><br />

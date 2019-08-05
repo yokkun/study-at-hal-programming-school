@@ -9,7 +9,7 @@ session_start();
  $_SESSION['memo'] = e($_POST ['memo']);
 
  /* 入力チェック*/
- $errors = [];
+ $errors = array();
  
  foreach($_SESSION as $key => $value){
      if(is_array($value)){
