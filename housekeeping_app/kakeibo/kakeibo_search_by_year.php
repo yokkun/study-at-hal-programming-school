@@ -6,6 +6,7 @@ session_start();
 	try {
 		$db = getDb();
 		$sql = "SELECT distinct year(日付) as 年 FROM 家計簿 order by 年 desc"; //distinct year 関数で dateの中の年だけを取得するsql文
+		
 		$stt = $db->prepare($sql);
 		$stt->execute();
 
@@ -22,10 +23,17 @@ session_start();
 if (isset($_GET['date']) && $_GET['date'] !== '') {
 	try {
 		$db2 = getDb();
-		$sql2 = "SELECT K.日付, H.費目名, K.メモ, K.入金額, K.出金額
+		$sql2 = "SELECT k.id, K.日付, H.費目名, K.メモ, K.入金額, K.出金額
 				FROM 家計簿 as K
 					INNER JOIN 費目 as H ON K.費目id = H.id
 				WHERE year(日付) = :year";
+		/* $sql3 = "select month(日付), sum(入金額 + 出金額) as 月合計
+        from 家計簿
+        where year(日付) = :year
+        and 費目id = :himoku_id
+        group by month(日付)
+        order by month(日付);"; */
+		
 		$stt2 = $db2->prepare($sql2);
 		$stt2->bindValue(':year', $_GET['date']);
 		$stt2->execute();
@@ -38,10 +46,12 @@ if (isset($_GET['date']) && $_GET['date'] !== '') {
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>家計簿集計画面：年</title>
+<title>家計簿検索画面：年</title>
 </head>
 <body>
-<h3>家計簿集計画面：年</h3>
+		<a href="../index.php">ホームへ戻る</a>
+		<a href="index.php">家計簿メニューへ戻る</a>
+<h3>家計簿検索画面：年</h3>
 <!-- <form method="get" action="kakeibo_search_year_process.php">
 	<select>
 		<id="year">
@@ -61,9 +71,10 @@ if (isset($_GET['date']) && $_GET['date'] !== '') {
 </form>
 <?php if (isset($_GET['date']) && $_GET['date'] !== '') { ?>
 <table border="1">
-	<tr><th>日付</th><th>費目名</th><th>メモ</th><th>入金額</th><th>出金額</th><th>更新</th><th>削除</th></tr>
+	<tr><th>id</th><th>日付</th><th>費目名</th><th>メモ</th><th>入金額</th><th>出金額</th><th>更新</th><th>削除</th></tr>
 	<?php while ($row2 = $stt2->fetch(PDO::FETCH_ASSOC)) { ?>
 		<tr>
+			<td><?=$row2['id'] ?></td>
 			<td><?=$row2['日付'] ?></td>
 			<td><?=$row2['費目名'] ?></td>
 			<td><?=$row2['メモ'] ?></td>

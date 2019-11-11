@@ -26,6 +26,12 @@ if (isset($_GET['himoku']) && $_GET['himoku'] !== '') {
 				FROM 家計簿 as K
 					INNER JOIN 費目 as H ON K.費目id = H.id
 				WHERE 費目id = :himoku_id";
+        $sql3 = "select month(日付), sum(入金額 + 出金額) as 月合計
+        from 家計簿
+        where year(日付) = :year
+        and 費目id = :himoku_id
+        group by month(日付)
+        order by month(日付);";
         $stt2 = $db2->prepare($sql2);
         $stt2->bindValue(':himoku_id', $_GET['himoku']);
         $stt2->execute();
@@ -58,6 +64,8 @@ if (isset($_GET['himoku']) && $_GET['himoku'] !== '') {
 <title>家計簿集計画面：年</title>
 </head>
 <body>
+		<a href="../index.php">ホームへ戻る</a>
+		<a href="index.php">家計簿メニューへ戻る</a>
 <h3>家計簿集計画面</h3>
 <!-- <form method="get" action="kakeibo_search_year_process.php">
 	<select>
