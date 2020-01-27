@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>イベント</title>
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('img').mousemove(function(e){
+		var x = e.pageX;
+		if (x < 175){
+			$('#msg').text('こんにちは。私、パールホワイトという種類のハムスターです。')
+		}
+		else if(x < 410){
+			$('#msg').text('何か上から垂れてきた。ガシガシ噛んじゃえ！');
+		}
+		else{
+			$('#msg').text('のど乾いたな、お水が飲みたいなー。');
+		}
+		});
+});
+</script>
+</head>
+<body>
+<p>画像の上でマウスを動かしてみてね。</p>
+<img src="../images/hamster.jpg" />
+<div id="msg"></div>
+</body>
+</html>

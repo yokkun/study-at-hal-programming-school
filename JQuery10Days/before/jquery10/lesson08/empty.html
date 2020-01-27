@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>フィルター</title>
+<link type="text/css" rel="stylesheet" href="../main.css" />
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('td:empty').css('background-color', 'Gray');
+  // $('td:parent').css('background-color', 'Gray');
+
+});
+</script>
+</head>
+<body>
+<table id="book">
+  <tr><th>タイトル</th><th>付録CD</th></tr>
+  <tr><td>10日でおぼえるPHP5</td><td>○</td></tr>
+  <tr><td>JavaScript本格入門</td><td></td></tr>
+  <tr><td>改訂3版 基礎PHP</td><td>○</td></tr>
+</table>
+</body>
+</html>

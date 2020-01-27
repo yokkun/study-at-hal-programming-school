@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>イベント</title>
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(document).contextmenu(function(e){
+		e.preventDefault();
+	});
+});
+</script>
+</head>
+<body>
+</body>
+</html>

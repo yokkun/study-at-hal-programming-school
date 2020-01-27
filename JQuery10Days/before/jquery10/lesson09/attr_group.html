@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>属性フィルター</title>
+<link type="text/css" rel="stylesheet" href="../main.css" />
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('a[href ^= "http://"][target]').css('background-color', 'Yellow');
+});
+</script>
+</head>
+<body>
+<ul>
+  <li><a href="http://codezine.jp/" target="other">
+    CodeZine：開発者のための実装系Webマガジン</a></li>
+  <li><a href="https://www.wings.msn.to/" target="_blank">
+    WINGSプロジェクト - サーバサイド技術の学び舎</a></li>
+  <li><a href="http://www.web-deli.com/">
+    WebDeli - Spicy Tools, Delicious Sites</a></li>
+</ul>
+</body>
+</html>
