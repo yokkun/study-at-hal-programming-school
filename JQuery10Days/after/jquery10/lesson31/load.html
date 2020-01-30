@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Ajax</title>
+<link href="tab.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"src="../jquery-2.0.3.min.js" ></script>
+<script type="text/javascript">
+$(function () {
+  $.get('html.html')
+  .done(function(data) {
+      $('#result').html(data);
+  });
+});
+</script>
+</head>
+<body>
+<p>この下に外部ファイルを埋め込みます。</p>
+<div id="result">
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jQuery UIの基本</title>
+<link type="text/css" rel="stylesheet" href="../jquery-ui-1.10.3.custom.min.css" />
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="../jquery-ui-i18n.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('#date').datepicker($.datepicker.regional['ja']);
+});
+</script>
+</head>
+<body>
+<form>
+日付：<input type="text" id="date" />
+</form>
+</body>
+</html>

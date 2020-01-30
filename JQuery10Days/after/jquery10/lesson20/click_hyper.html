@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="event_obj.css" rel="stylesheet" type="text/css" />
+<title>イベント</title>
+<link type="text/css" rel="stylesheet" href="../main.css" />
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('#big').attr('src', $('#list a:first-child').attr('href'));
+  $('#list a').click(function(e) {
+    $('#big').attr('src', $(this).attr('href'));
+    e.preventDefault();
+  });
+});
+</script>
+</head>
+<body>
+<div id="list">
+  <a href="../images/ham/ham1.jpg">屋根に上るハム</a>
+  <a href="../images/ham/ham2.jpg">横から見たハム</a>
+  <a href="../images/ham/ham3.jpg">上から見たハム</a>
+  <a href="../images/ham/ham4.jpg">ガジガジするハム</a>
+  <a href="../images/ham/ham5.jpg">同化するハム</a>
+</div>
+<p><img id="big" /></p>
+</body>
+</html>

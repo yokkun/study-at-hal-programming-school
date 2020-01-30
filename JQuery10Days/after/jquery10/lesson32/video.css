@@ -1,0 +1,18 @@
+﻿img.thumb {
+  width: 100px;
+  height: 75px;
+  border: none;
+  margin: 15px;
+}
+
+#pager {
+  text-align: center;
+}
+
+.pager_link {
+  margin: 5px;
+  padding: 4px;
+  background-color: #006;
+  color: #fff;
+  text-decoration: none;
+}
