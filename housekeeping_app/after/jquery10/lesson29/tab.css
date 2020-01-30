@@ -1,0 +1,36 @@
+﻿#container {
+  width: 690px;
+}
+
+#container > ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#container > ul li {
+  list-style-type: none;
+  float: left;
+  line-height: 160%;
+  width: 138px;
+  height: 40px;
+}
+
+#container > ul li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #cfc;
+  color: #000;
+  border: solid 1px Black;
+}
+
+#container > ul li a.selected {
+  background-color: #000;
+  color: #fff;
+}
+
+#container > div {
+  border: 1px solid #c0c0c0;
+  border-top: none;
+  padding: 15px;
+}

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>イベント</title>
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('form').submit(function(e) {
+    if (!confirm('本当に送信しても良いですか？')) {
+      e.preventDefault();
+    }
+  });
+});
+</script>
+</head>
+<body>
+<form method="POST" action="xxxxx.php">
+  名前：
+  <input type="text" name="name" />
+  <input type="submit" value="送信" />
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>イベント</title>
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  var flag = false;
+  $('img')
+    .mousedown(function() {
+      flag = true;
+      return false;
+    })
+    .mouseup(function() {
+      flag = false;
+    })
+    .mousemove(function(e) {
+      if (flag) {
+        $(this).css({
+         top: e.pageY - 30,
+         left: e.pageX - 70
+        });
+      }
+    });
+});
+</script>
+</head>
+<body>
+<img src="../images/wings.jpg" style="position:absolute;">
+</body>
+</html>

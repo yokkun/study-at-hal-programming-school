@@ -51,6 +51,8 @@ session_start();
 <head>
     <meta charset="UTF-8" />
     <title>年・費目指定集計画面</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
     <h2>年・費目指定集計画面</h2>
@@ -227,6 +229,100 @@ session_start();
 //      print_r($_SESSION['income_outcome']);
 //      print("</pre");
     ?>
-
+    <script>
+    $(function() { //ここからds.jsのコード（pie/donutsチャートを表示）
+    	$.ajax({ 
+    		type: 'GET',
+    		url: 'kakeibo_himoku_json.php',
+    		data: {
+    		},
+    		dataType: 'json'
+    	})
+    	.done(function(data,textStatus, jqXHR) {
+    		// 0. jQueryのAjaxを使ってサーバからjson形式でデータを取得
+    		let dataset = data;
+    
+    		let width = 800; // グラフの幅
+    		  let height = 600; // グラフの高さ
+    		  let radius = Math.min(width, height) / 2 - 10;
+    
+    		  // 2. SVG領域の設定
+    		  let svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
+    
+    		  g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    
+    		  // 3. カラーの設定
+    		  let color = d3.scaleOrdinal()
+    		    .range(["#DC3912", "#3366CC", "#109618", "#FF9900", "#990099"]);
+    
+    		  // 4. pieチャートデータセット用関数の設定
+    		  let pie = d3.pie()
+    		    .value(function(d) { return d.value; })
+    		    .sort(null);
+    
+    		  // 5. pieチャートSVG要素の設定
+    		  let pieGroup = g.selectAll(".pie")
+    		    .data(pie(dataset))
+    		    .enter()
+    		    .append("g")
+    		    .attr("class", "pie");
+    
+    		  arc = d3.arc()
+    		    .outerRadius(radius)
+    		    .innerRadius(0);
+    
+    		  pieGroup.append("path")
+    		    .attr("d", arc)
+    		    .attr("fill", function(d) { return color(d.index) })
+    		    .attr("opacity", 0.75)
+    		    .attr("stroke", "white");
+    
+    		  // 6. pieチャートテキストSVG要素の設定
+    		  let text = d3.arc()
+    		    .outerRadius(radius - 30)
+    		    .innerRadius(radius - 30);
+    
+    		  pieGroup.append("text")
+    		    .attr("fill", "black")
+    		    .attr("transform", function(d) { return "translate(" + text.centroid(d) + ")"; })
+    		    .attr("dy", "5px")
+    		    .attr("font", "10px")
+    		    .attr("text-anchor", "middle")
+    		    .text(function(d) { return d.data.name; });
+    	})
+    	.fail(function(jqXHR, textStatus, errorThrown){
+    		console.log(jqXHR);
+    		console.log(textStatus);
+    		console.log(errorThrown);
+    	});
+    
+    	/*
+    	dataset= [
+    		{"name": "居住費", "value": 80000},
+    		{"name": "教養娯楽費", "value": 2000},
+    		{"name": "水道光熱費", "value": 13000},
+    		{"name": "通信費", "value": 9000},
+    		{"name": "雑費", "value": 8000},
+    		{"name": "食費", "value": 2105},
+    	]
+    	*/
+    
+    });
+    
+    /*
+    let dataset = [
+        { "name": "A", "value": 5 },
+        { "name": "B", "value": 6 },
+        { "name": "C", "value": 8 },
+        { "name": "D", "value": 1 },
+        { "name": "E", "value": 2 },
+        { "name": "F", "value": 6 },
+        { "name": "G", "value": 8 },
+        { "name": "H", "value": 6 },
+        { "name": "I", "value": 10 },
+        { "name": "J", "value": 9 }
+      ]
+    */
+</script>
 </body>
 </html>

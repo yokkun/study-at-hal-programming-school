@@ -1,0 +1,38 @@
+﻿.context {
+  position: absolute;
+  display: none;
+  padding: 0px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: white;
+}
+
+.context li {
+  padding: 10px 5px 10px 10px;
+  list-style: none;
+  border-bottom-color: #ccc;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  font-size: small;
+}
+
+.context li a {
+  text-decoration: none;
+  color:Black;
+}
+
+table {
+  border-collapse:collapse;
+  border: solid 1px Black;
+}
+
+th {
+  text-align: center;
+  background-color: rgb(95, 109, 147);
+  color: #fff;
+}
+
+th, td {
+  border: solid 1px Black;
+  padding: 5px;
+}

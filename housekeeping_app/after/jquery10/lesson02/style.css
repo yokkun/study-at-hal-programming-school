@@ -1,0 +1,44 @@
+﻿body {
+  background-color: Black;
+  color: White;
+}
+
+#main {
+  background-color: White;  
+  background-image: url(../images/bg.gif);
+  color: Black;
+  padding: 5px;
+}
+
+img {
+  float:right;
+}
+
+p {
+  background-color: #cff;
+  border: 1px solid #ccf;  
+  margin: 5px;
+  padding: 5px;
+  font-size: smaller;
+  width: 300px;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  padding: 5px;
+  font-size: smaller;
+}
+
+.navi {
+  color: #0ff;
+}
+
+a:visited {
+  color: #c69;
+}
+
+a:hover {
+  background-color: #ffc;
+  color: Black;
+}

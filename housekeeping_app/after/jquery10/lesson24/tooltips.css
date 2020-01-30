@@ -1,0 +1,17 @@
+﻿#article {
+  line-height: 150%;
+}
+
+.tiplink {
+  border-bottom: 1px dotted Black;
+  cursor: pointer;
+}
+
+.tip {
+  border: 1px solid Black;
+  background-color: #ffc;
+  font-size: smaller;
+  padding: 2px;
+  position: absolute;
+  display: none;
+}

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>イベント</title>
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('#fm').keypress(function(e) {
+    var k = e.which;
+    if (!((k >= 48 && k <= 57) || k === 45
+      || k === 8 || k === 0)) {
+      e.preventDefault();
+    }
+  });
+});
+</script>
+</head>
+<body>
+<form id="fm">
+郵便番号：
+<input type="text" id="zip" name="zip" size="20" />
+</form>
+</body>
+</html>

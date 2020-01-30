@@ -1,0 +1,19 @@
+﻿#panel {
+  width: 500px;
+}
+
+#panel > dt {
+  border-left: solid 10px #06f;
+  border-bottom: solid 1px White;
+  background-color: #006;
+  color: White;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#panel > dd {
+  border: solid 1px Silver;
+  margin: 0px;
+  padding: 10px;
+}

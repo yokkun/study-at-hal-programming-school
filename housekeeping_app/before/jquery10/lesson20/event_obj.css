@@ -1,0 +1,21 @@
+﻿.context {
+【ここに入力】
+  padding: 0px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: white;
+}
+
+.context li {
+  padding: 10px 5px 10px 10px;
+【ここに入力】
+  border-bottom-color: #ccc;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  font-size: small;
+}
+
+.context li a {
+  text-decoration: none;
+  color:Black;
+}

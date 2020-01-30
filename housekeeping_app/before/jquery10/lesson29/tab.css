@@ -1,0 +1,32 @@
+﻿#container {
+  width: 690px;
+}
+
+#container > ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#container > ul li {
+【ここに入力】
+  line-height: 160%;
+  width: 138px;
+  height: 40px;
+}
+
+#container > ul li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+【ここに入力】
+}
+
+#container > ul li a.selected {
+【ここに入力】
+}
+
+#container > div {
+  border: 1px solid #c0c0c0;
+  border-top: none;
+  padding: 15px;
+}
